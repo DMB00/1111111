@@ -1,10 +1,258 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная - Интернет-магазин</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <style>
+        body {
+            padding-top: 76px;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        .hero-section {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            padding: 5rem 0;
+            margin-bottom: 3rem;
+            border-radius: 0 0 2rem 2rem;
+        }
+        .product-card {
+            border: none;
+            border-radius: 1rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-bottom: 2rem;
+        }
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        .price-tag {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #0d6efd;
+            margin: 1rem 0;
+        }
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+            margin: 1rem 0;
+        }
+        .feature-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+        .feature-list i {
+            color: #0d6efd;
+            margin-right: 0.5rem;
+        }
+        .btn-buy {
+            background: linear-gradient(45deg, #0d6efd, #0a58ca);
+            border: none;
+            padding: 0.75rem 2rem;
+            font-weight: 600;
+            border-radius: 0.5rem;
+            transition: all 0.3s;
+            width: 100%;
+        }
+        .btn-buy:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(13, 110, 253, 0.3);
+        }
+        .footer {
+            background-color: #f8f9fa;
+            padding: 3rem 0;
+            margin-top: 4rem;
+            border-top: 1px solid #dee2e6;
+        }
+        .user-dropdown {
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-$END$
+    <!-- Навигация -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <i class="bi bi-shop"></i> Магазин
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/">
+                            <i class="bi bi-house-door"></i> Главная
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/catalog">
+                            <i class="bi bi-grid"></i> Каталог
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/category">
+                            <i class="bi bi-tags"></i> Категория
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contacts">
+                            <i class="bi bi-telephone"></i> Контакты
+                        </a>
+                    </li>
+                </ul>
+                <div class="dropdown">
+                    <button class="btn btn-outline-light dropdown-toggle user-dropdown" type="button"
+                            data-bs-toggle="dropdown">
+                        <i class="bi bi-person-circle"></i> Пользователь ▾
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-person"></i> Профиль</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-gear"></i> Настройки</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item text-danger" href="#"><i class="bi bi-box-arrow-right"></i> Выход</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Герой секция -->
+    <div class="hero-section">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold mb-3">Главная</h1>
+            <p class="lead mb-4">Вы находитесь на сайте, предназначенном для продажи товаров</p>
+        </div>
+    </div>
+
+    <!-- Товары -->
+    <div class="container">
+        <div class="row">
+            <!-- Товар 1 -->
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card product-card h-100">
+                    <div class="card-body text-center d-flex flex-column">
+                        <h5 class="card-title">Товар 1</h5>
+                        <div class="price-tag">$ 100</div>
+                        <p class="card-text flex-grow-1">
+                            10 книг включает 2 GB хранилища, Email поддержку, доступ в центр помощи
+                        </p>
+                        <ul class="feature-list">
+                            <li><i class="bi bi-check-circle"></i> 2 GB хранилища</li>
+                            <li><i class="bi bi-check-circle"></i> Поддержка по Email</li>
+                            <li><i class="bi bi-check-circle"></i> Доступ в центр помощи</li>
+                        </ul>
+                        <button class="btn btn-buy mt-auto">
+                            <i class="bi bi-cart-plus"></i> Купить
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Товар 2 -->
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card product-card h-100">
+                    <div class="card-body text-center d-flex flex-column">
+                        <h5 class="card-title">Товар 2</h5>
+                        <div class="price-tag">$ 100</div>
+                        <p class="card-text flex-grow-1">
+                            10 книг включает 2 GB хранилища, Email поддержку, доступ в центр помощи
+                        </p>
+                        <ul class="feature-list">
+                            <li><i class="bi bi-check-circle"></i> 2 GB хранилища</li>
+                            <li><i class="bi bi-check-circle"></i> Поддержка по Email</li>
+                            <li><i class="bi bi-check-circle"></i> Доступ в центр помощи</li>
+                        </ul>
+                        <button class="btn btn-buy mt-auto">
+                            <i class="bi bi-cart-plus"></i> Купить
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Товар 3 -->
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card product-card h-100">
+                    <div class="card-body text-center d-flex flex-column">
+                        <h5 class="card-title">Товар 3</h5>
+                        <div class="price-tag">$ 100</div>
+                        <p class="card-text flex-grow-1">
+                            10 книг включает 3 GB хранилища, Email поддержку, доступ в центр помощи
+                        </p>
+                        <ul class="feature-list">
+                            <li><i class="bi bi-check-circle"></i> 3 GB хранилища</li>
+                            <li><i class="bi bi-check-circle"></i> Поддержка по Email</li>
+                            <li><i class="bi bi-check-circle"></i> Доступ в центр помощи</li>
+                        </ul>
+                        <button class="btn btn-buy mt-auto">
+                            <i class="bi bi-cart-plus"></i> Купить
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Товар 4 -->
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card product-card h-100">
+                    <div class="card-body text-center d-flex flex-column">
+                        <h5 class="card-title">Товар 4</h5>
+                        <div class="price-tag">$ 100</div>
+                        <p class="card-text flex-grow-1">
+                            10 книг включает 4 GB хранилища, Email поддержку, доступ в центр помощи
+                        </p>
+                        <ul class="feature-list">
+                            <li><i class="bi bi-check-circle"></i> 4 GB хранилища</li>
+                            <li><i class="bi bi-check-circle"></i> Поддержка по Email</li>
+                            <li><i class="bi bi-check-circle"></i> Доступ в центр помощи</li>
+                        </ul>
+                        <button class="btn btn-buy mt-auto">
+                            <i class="bi bi-cart-plus"></i> Купить
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5><i class="bi bi-shop"></i> Интернет-магазин</h5>
+                    <p>Лучшие товары по лучшим ценам</p>
+                </div>
+                <div class="col-md-6 text-end">
+                    <p>&copy; 2023 Все права защищены</p>
+                    <p>Сайт создан с использованием Bootstrap 5</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Обработка кнопок покупки
+        document.querySelectorAll('.btn-buy').forEach(button => {
+            button.addEventListener('click', function() {
+                const productName = this.closest('.card').querySelector('.card-title').textContent;
+                alert(`Товар "${productName}" добавлен в корзину!`);
+            });
+        });
+    </script>
 </body>
 </html>

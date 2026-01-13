@@ -1,10 +1,238 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты - Интернет-магазин</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <style>
+        body { padding-top: 76px; }
+        .contacts-header {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            padding: 4rem 0;
+            margin-bottom: 3rem;
+            border-radius: 0 0 2rem 2rem;
+        }
+        .contact-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+        .contact-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #4facfe, #00f2fe);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: white;
+            font-size: 1.8rem;
+        }
+        .contact-form {
+            background: white;
+            border-radius: 1rem;
+            padding: 2.5rem;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+        .form-control {
+            border: 2px solid #e0e0e0;
+            border-radius: 0.5rem;
+            padding: 0.75rem 1rem;
+        }
+        .btn-submit {
+            background: linear-gradient(45deg, #4facfe, #00f2fe);
+            border: none;
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            width: 100%;
+        }
+        .info-box {
+            background: #e3f2fd;
+            border-left: 4px solid #4facfe;
+            padding: 1.5rem;
+            border-radius: 0 0.5rem 0.5rem 0;
+            margin: 2rem 0;
+        }
+    </style>
 </head>
 <body>
-$END$
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <i class="bi bi-shop"></i> Магазин
+            </a>
+            <div class="navbar-nav">
+                <a class="nav-link" href="/">Главная</a>
+                <a class="nav-link" href="/catalog">Каталог</a>
+                <a class="nav-link" href="/category">Категория</a>
+                <a class="nav-link active" href="/contacts">Контакты</a>
+            </div>
+            <div class="dropdown">
+                <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                    <i class="bi bi-person-circle"></i> Пользователь ▾
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a class="dropdown-item" href="#">Профиль</a></li>
+                    <li><a class="dropdown-item" href="#">Сообщения</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Выход</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="contacts-header">
+        <div class="container text-center text-white">
+            <h1 class="display-5 fw-bold">Контакты</h1>
+            <p class="lead">Свяжитесь с нами удобным для вас способом</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-md-8 mx-auto">
+                <h2 class="text-center mb-4">Наши контакты</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+                <div class="info-box">
+                    <p class="mb-0">
+                        <i class="bi bi-info-circle"></i> While these feedback styles cannot be styled with CSS,
+                        you can still customize the feedback text through JavaScript.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-5">
+            <div class="col-md-4">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="bi bi-geo-alt"></i>
+                    </div>
+                    <h4>Адрес</h4>
+                    <p class="text-muted">
+                        Москва, ул. Примерная, д. 1<br>
+                        Бизнес-центр "ТехноПлаза"
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="bi bi-telephone"></i>
+                    </div>
+                    <h4>Телефон</h4>
+                    <p class="text-muted">
+                        +7 (999) 123-45-67<br>
+                        +7 (495) 765-43-21
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="bi bi-envelope"></i>
+                    </div>
+                    <h4>Email</h4>
+                    <p class="text-muted">
+                        info@example.com<br>
+                        support@example.com
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="contact-form">
+                    <h3 class="mb-4">Форма обратной связи</h3>
+                    <form id="contactForm">
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Почта</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Сообщение</label>
+                            <textarea class="form-control" id="message" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-submit">Отправить</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="contact-card">
+                    <h4>Часы работы</h4>
+                    <p class="text-muted">
+                        Пн-Пт: 9:00-18:00<br>
+                        Сб: 10:00-16:00<br>
+                        Вс: выходной
+                    </p>
+                </div>
+
+                <div class="contact-card">
+                    <h4>Быстрая связь</h4>
+                    <p class="text-muted">
+                        Ответим в течение 1-2 рабочих дней
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Контакты</h5>
+                    <p>Мы всегда рады помочь вам!</p>
+                </div>
+                <div class="col-md-6 text-end">
+                    <p>&copy; 2023 Контактная информация</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const formData = {
+                email: document.getElementById('email').value,
+                message: document.getElementById('message').value
+            };
+
+            fetch('/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert('Сообщение отправлено! Данные получены сервером.');
+                this.reset();
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Произошла ошибка при отправке.');
+            });
+        });
+    </script>
 </body>
 </html>
